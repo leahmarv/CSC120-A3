@@ -11,31 +11,30 @@ class Conversation {
     System.out.println("How many rounds would you like the conversation to be?");
 
     int rounds = myScanner.nextInt();
+    System.out.println(myScanner.nextLine());
 
-    //System.out.println("Hi! What's up?");
-
+    String answer = "";
     String userLog[] = new String[rounds];
     String botLog[] = new String[rounds];
     String randResponse[] = {"How about that!", "Whoa, I didn't know that.", "Sounds cool!"};
-    
-    int i = 0;
-    while(i < rounds) {
-      userLog[i] = myScanner.nextLine();
+
+    for (int i = 0; i < rounds; i++)  {
       botLog[i] = randResponse[random.nextInt(randResponse.length)];
-      //scanner input should happen here
+
       System.out.println(botLog[i]);
+      answer = myScanner.nextLine();
+      answer = answer.replaceAll("I", "you");
+      userLog[i] = answer;
+
       System.out.println("done");
-      i++;
-      //scanner input is happening here
     }
 
     //Prints chat log
     System.out.println("TRANSCRIPT:");
-    int c = 0;
-    while(c < rounds) {
+
+    for (int c = 0; c < rounds; c++) {
       System.out.println(botLog[c]);
       System.out.println(userLog[c]);
-      c++;
     }
 
 
