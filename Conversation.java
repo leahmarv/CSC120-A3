@@ -1,6 +1,14 @@
+import java.util.Scanner;
+
 class Conversation {
 
   public static void main(String[] arguments) {
-    // You will start the conversation here.
+
+    Scanner myScanner = new Scanner(System.in);
+
+    System.out.println("How many rounds would you like the conversation to be?");
+
+    int rounds = myScanner.nextInt();
+    System.out.println(rounds);
   }
 }
