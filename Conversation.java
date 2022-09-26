@@ -11,22 +11,32 @@ class Conversation {
     System.out.println("How many rounds would you like the conversation to be?");
 
     int rounds = myScanner.nextInt();
+
+    System.out.println("Hi! What are you thinking about?");
+
     System.out.println(myScanner.nextLine());
 
     String answer = "";
+    String reply = "";
     String userLog[] = new String[rounds];
     String botLog[] = new String[rounds];
     String randResponse[] = {"How about that!", "Whoa, I didn't know that.", "Sounds cool!"};
 
     for (int i = 0; i < rounds; i++)  {
-      botLog[i] = randResponse[random.nextInt(randResponse.length)];
-
-      System.out.println(botLog[i]);
+      
       answer = myScanner.nextLine();
-      answer = answer.replaceAll("I", "you");
       userLog[i] = answer;
 
-      System.out.println("done");
+      if (answer.contains("I") || answer.contains("I ")){
+
+        reply = answer.replaceAll("I", "you");
+        botLog[i] = reply;
+        System.out.println(botLog[i]);
+
+      } else {
+        botLog[i] = randResponse[random.nextInt(randResponse.length)];
+        System.out.println(botLog[i]);
+      }
     }
 
     //Prints chat log
