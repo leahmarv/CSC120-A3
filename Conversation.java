@@ -32,18 +32,19 @@ class Conversation {
       userInput = myScanner.nextLine();
       userLog[i] = userInput;
       spaces = userInput.replaceAll("[^ ]", "").length();
-      String str[] = userInput.split(" "); 
+      String str[] = userInput.split(" ");
+      int strLength = str.length;
 
       for (String element: str) {
         System.out.println(element);
       }
 
-      for (int k = spaces; k < spaces; k++) {
+      for (int k = strLength; k < strLength; k++) {
         
         if (str[k].toLowerCase().contains("I")){
           //reply = userInput.replaceAll("I", "you");
             str[k] = "you";
-            System.out.println(botLog[i]);
+            //System.out.println(botLog[i]);
             flag = 1;
         }
 
