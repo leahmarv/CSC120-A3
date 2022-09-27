@@ -16,8 +16,9 @@ class Conversation {
 
     System.out.println(myScanner.nextLine());
 
+    int flag = 0;
+
     String answer = "";
-    String reply = "";
     String userLog[] = new String[rounds];
     String botLog[] = new String[rounds];
     String randResponse[] = {"How about that!", "Whoa, I didn't know that.", "Sounds cool!"};
@@ -26,14 +27,33 @@ class Conversation {
       
       answer = myScanner.nextLine();
       userLog[i] = answer;
+      String str[] = answer.split(" ");
 
-      if (answer.contains("I") || answer.contains("I ")){
+      //insert for loop
 
-        reply = answer.replaceAll("I", "you");
-        botLog[i] = reply;
+      for (int k = 0; k < str.length; k++) {
+
+        if (str[k].contains("I")){
+
+          str[k] = "you";
+          //System.out.println(botLog[i]);
+
+          flag = 1;
+
+        }
+      } 
+      
+      if (flag == 1){
+
+        botLog[i] = str[0];
+
+        for (int z = 1; z < str.length; z++) {
+          botLog[i] = botLog[i] + " " + str[z];
+        }
         System.out.println(botLog[i]);
-
-      } else {
+      }
+      
+      if (flag == 0) {
         botLog[i] = randResponse[random.nextInt(randResponse.length)];
         System.out.println(botLog[i]);
       }
