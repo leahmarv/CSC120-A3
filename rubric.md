@@ -22,15 +22,15 @@ YES 1 pt: Allocates static array of canned responses
 
 ### Level 2 (3 pts)
 
-_____ 1 pt: Uses a canned response when no mirror words detected
+YES 1 pt: Uses a canned response when no mirror words detected
 
-_____ 1 pt: Detects the requested set of mirror words (at minimum)
+YES 1 pt: Detects the requested set of mirror words (at minimum)
 
-_____ 1 pt: Replaces simple mirror words appropriately (unpunctuated, lowercase)
+YES 1 pt: Replaces simple mirror words appropriately (unpunctuated, lowercase)
 
 ### Level 3 (3 pts)
 
-_____ 1 pt: Makes all appropriate mirror replacements
+YES 1 pt: Makes all appropriate mirror replacements
 
 YES 1 pt: Stores transcript of the conversation in an array
 
@@ -38,32 +38,32 @@ YES 1 pt: Prints transcript when terminating
 
 ## Kudos:
 
-_____ (Kudos!) Handles mirror words with punctuation
+NO (Kudos!) Handles mirror words with punctuation
 
-_____ (Kudos!) Generates output with correct punctuation & capitalization
+NO (Kudos!) Generates output with correct punctuation & capitalization
 
-_____ (Kudos!) Handles you --> me/I dilemma
+NO (Kudos!) Handles you --> me/I dilemma
 
 
 
 ## General Items:
 
-_____ 4 pts: Programs compile without errors or warnings
+YES 4 pts: Programs compile without errors or warnings
 
-_____ 2 pts: Executes fully & consistently without crashing (exception/freeze)
+YES 2 pts: Executes fully & consistently without crashing (exception/freeze)
 
-_____ 2 pt: Complies with style guidelines (missing items 1 pt each):
+YES 2 pt: Complies with style guidelines (missing items 1 pt each):
 
-      _____ Classes & class members all have Javadoc header comments
+      YES Classes & class members all have Javadoc header comments
 
-      _____ Clear and consistent indentation of bracketed sections
+      YES Clear and consistent indentation of bracketed sections
 
-      _____ Adheres to Java conventions on naming & capitalization
+      YES Adheres to Java conventions on naming & capitalization
 
-      _____ Methods & variables all have clear and accurate names
+      YES Methods & variables all have clear and accurate names
 
-      _____ Methods avoid confusing side effects
+      YES Methods avoid confusing side effects
 
-_____ 1 pt: All required files included with submission (including completed checklist file)
+YES 1 pt: All required files included with submission (including completed checklist file)
 
 YES 1 pt: `reflection.md` contains your reflection on the assignment

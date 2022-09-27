@@ -1,3 +1,11 @@
+/*
+ * Author: Leah Marville
+ * Project: Assignment 3
+ * Class: CSC 120
+ * Date: 09-26-2022
+ * Code in line 42 based on https://stackoverflow.com/questions/11726023/split-string-into-individual-words-java
+ */
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -8,6 +16,7 @@ class Conversation {
     Scanner myScanner = new Scanner(System.in);
     Random random = new Random();     
 
+    //Establishes number of rounds
     System.out.println("How many rounds would you like the conversation to be?");
 
     int rounds = myScanner.nextInt();
@@ -28,16 +37,15 @@ class Conversation {
       flag = 0;
       answer = myScanner.nextLine();
       userLog[i] = answer;
-      String str[] = answer.split(" ");
+      answer = answer.toLowerCase();
 
-      //insert for loop
+      //Creates array of individual words from user response (source: https://stackoverflow.com/questions/11726023/split-string-into-individual-words-java)
+      String str[] = answer.split("[^a-zA-Z]+");
 
+      //Checks each word for mirror words, makes substitutions as appropriate
       for (int k = 0; k < str.length; k++) {
 
-        if (str[k].equals("I")){
-          str[k] = "you";
-          flag = 1;
-        } else if (str[k].equals("you")){
+        if (str[k].equals("you")){
           str[k] = "I";
           flag = 1;
         } else if (str[k].equals("me")){
@@ -55,12 +63,17 @@ class Conversation {
         } else if (str[k].equals("your")){
           str[k] = "my";
           flag = 1;
+        } else if (str[k].equals("i")){
+          str[k] = "you";
+          flag = 1;
         }
       } 
       
+      //If mirror word was found, makes response including substitution from array of individual words
       if (flag == 1){
         botLog[i] = str[0];
 
+        //Appends current word to string in botLog array
         for (int z = 1; z < str.length; z++) {
           botLog[i] = botLog[i] + " " + str[z];
         }
@@ -68,6 +81,7 @@ class Conversation {
         System.out.println(botLog[i]);
       }
       
+      //Prints random response if no mirror variables were detected
       if (flag == 0) {
         botLog[i] = randResponse[random.nextInt(randResponse.length)];
         System.out.println(botLog[i]);
@@ -81,7 +95,5 @@ class Conversation {
       System.out.println(userLog[c]);
       System.out.println(botLog[c]);
     }
-
-
   }
 }
