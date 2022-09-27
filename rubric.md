@@ -22,7 +22,7 @@ YES 1 pt: Allocates static array of canned responses
 
 ### Level 2 (3 pts)
 
-_____ 1 pt: Uses a canned response when no mirror words detected
+YES 1 pt: Uses a canned response when no mirror words detected
 
 _____ 1 pt: Detects the requested set of mirror words (at minimum)
 
@@ -42,7 +42,7 @@ _____ (Kudos!) Handles mirror words with punctuation
 
 _____ (Kudos!) Generates output with correct punctuation & capitalization
 
-_____ (Kudos!) Handles you --> me/I dilemma
+NO (Kudos!) Handles you --> me/I dilemma
 
 
 
@@ -56,11 +56,11 @@ _____ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
       _____ Classes & class members all have Javadoc header comments
 
-      _____ Clear and consistent indentation of bracketed sections
+      YES Clear and consistent indentation of bracketed sections
 
-      _____ Adheres to Java conventions on naming & capitalization
+      YES Adheres to Java conventions on naming & capitalization
 
-      _____ Methods & variables all have clear and accurate names
+      YES Methods & variables all have clear and accurate names
 
       _____ Methods avoid confusing side effects
 
