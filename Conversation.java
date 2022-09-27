@@ -3,7 +3,7 @@
  * Project: Assignment 3
  * Class: CSC 120
  * Date: 09-26-2022
- * Code in line 42 based on https://stackoverflow.com/questions/11726023/split-string-into-individual-words-java
+ * Code in line 43 based on https://stackoverflow.com/questions/11726023/split-string-into-individual-words-java
  */
 
 import java.util.Scanner;
