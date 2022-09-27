@@ -21,10 +21,11 @@ class Conversation {
     String answer = "";
     String userLog[] = new String[rounds];
     String botLog[] = new String[rounds];
-    String randResponse[] = {"How about that!", "Whoa, I didn't know that.", "Sounds cool!"};
+    String randResponse[] = {"How about that!", "Whoa, I didn't know that.", "Sounds cool!", "Okay then."};
 
     for (int i = 0; i < rounds; i++)  {
       
+      flag = 0;
       answer = myScanner.nextLine();
       userLog[i] = answer;
       String str[] = answer.split(" ");
@@ -33,23 +34,37 @@ class Conversation {
 
       for (int k = 0; k < str.length; k++) {
 
-        if (str[k].contains("I")){
-
+        if (str[k].equals("I")){
           str[k] = "you";
-          //System.out.println(botLog[i]);
-
           flag = 1;
-
+        } else if (str[k].equals("you")){
+          str[k] = "I";
+          flag = 1;
+        } else if (str[k].equals("me")){
+          str[k] = "you";
+          flag = 1;
+        } else if (str[k].equals("am")){
+          str[k] = "are";
+          flag = 1;
+        } else if (str[k].equals("are")){
+          str[k] = "am";
+          flag = 1;
+        } else if (str[k].equals("my")){
+          str[k] = "your";
+          flag = 1;
+        } else if (str[k].equals("your")){
+          str[k] = "my";
+          flag = 1;
         }
       } 
       
       if (flag == 1){
-
         botLog[i] = str[0];
 
         for (int z = 1; z < str.length; z++) {
           botLog[i] = botLog[i] + " " + str[z];
         }
+        botLog[i] = botLog[i] + "?";
         System.out.println(botLog[i]);
       }
       
@@ -60,11 +75,11 @@ class Conversation {
     }
 
     //Prints chat log
-    System.out.println("TRANSCRIPT:");
+    System.out.println("\nTRANSCRIPT:\nHi! What are you thinking about?");
 
     for (int c = 0; c < rounds; c++) {
-      System.out.println(botLog[c]);
       System.out.println(userLog[c]);
+      System.out.println(botLog[c]);
     }
 
 
